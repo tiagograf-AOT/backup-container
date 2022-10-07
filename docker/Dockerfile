@@ -1,5 +1,5 @@
 # This image provides a postgres installation from which to run backups 
-FROM centos7
+FROM centos:7
 
 # Change timezone to PST for convenience
 ENV TZ=PST8PDT
