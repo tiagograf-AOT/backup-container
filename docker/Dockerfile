@@ -12,6 +12,8 @@ COPY backup.* /
 
 COPY webhook-template.json /
 
+RUN yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+RUN yum install -y postgresql14-client
 # ========================================================================================================
 # Install go-crond (from https://github.com/BCDevOps/go-crond)
 #  - Adds some additional logging enhancements on top of the upstream project; 
@@ -20,8 +22,8 @@ COPY webhook-template.json /
 # CRON Jobs in OpenShift:
 #  - https://blog.danman.eu/cron-jobs-in-openshift/
 # --------------------------------------------------------------------------------------------------------
-ARG SOURCE_REPO=webdevops
-ARG GOCROND_VERSION=22.9.1
+ARG SOURCE_REPO=BCDevOps
+ARG GOCROND_VERSION=0.63
 ADD https://github.com/$SOURCE_REPO/go-crond/releases/download/$GOCROND_VERSION/go-crond-64-linux /usr/bin/go-crond
 
 USER root
