@@ -12,6 +12,8 @@ COPY backup.* /
 
 COPY webhook-template.json /
 
+USER root
+
 RUN yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 RUN yum install -y postgresql14-client
 # ========================================================================================================
@@ -25,8 +27,6 @@ RUN yum install -y postgresql14-client
 ARG SOURCE_REPO=BCDevOps
 ARG GOCROND_VERSION=0.63
 ADD https://github.com/$SOURCE_REPO/go-crond/releases/download/$GOCROND_VERSION/go-crond-64-linux /usr/bin/go-crond
-
-USER root
 
 RUN chmod +x /usr/bin/go-crond
 # ========================================================================================================
