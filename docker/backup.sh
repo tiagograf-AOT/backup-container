@@ -3,7 +3,6 @@
 # ======================================================================================
 # Imports
 # --------------------------------------------------------------------------------------
-. ./backup.usage                # Usage information
 . ./backup.logging              # Logging functions
 . ./backup.config.utils         # Configuration functions
 . ./backup.container.utils      # Container Utility Functions
