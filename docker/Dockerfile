@@ -15,7 +15,7 @@ COPY webhook-template.json /
 USER root
 
 RUN yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-RUN yum install -y postgresql14-client
+RUN yum install -y postgresql14-server
 # ========================================================================================================
 # Install go-crond (from https://github.com/BCDevOps/go-crond)
 #  - Adds some additional logging enhancements on top of the upstream project; 
