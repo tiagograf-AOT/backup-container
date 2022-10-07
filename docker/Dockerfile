@@ -41,4 +41,4 @@ RUN echo $TZ > /etc/timezone
 USER 26
 
 # Set the default CMD.
-CMD bash /backup.sh
+CMD sh /backup.sh
